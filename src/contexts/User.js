@@ -1,7 +1,7 @@
 import React, {createContext, useState} from 'react';
 
 const UserContext = createContext({
-  name: '',
+  user: {name: ''},
   dispatch: () => {},
 });
 
