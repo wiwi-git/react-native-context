@@ -1,19 +1,18 @@
-import React, { createContext, useState } from "react";
+import React, {createContext, useState} from 'react';
 
-const UserContext = createContext({ 
-    name: '',
-    dispatch: () => {},
-
+const UserContext = createContext({
+  name: '',
+  dispatch: () => {},
 });
 
-const UserProvider = ({ children }) => {
-    const [name, setName] = useState('default name');
-    const value = { user: {name}, dispatch: setName};
+const UserProvider = ({children}) => {
+  const [name, setName] = useState('default name');
+  const value = {user: {name}, dispatch: setName};
 
-    return <UserContext.Provider value={value}>{children}</UserContext.Provider>
-}
+  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
+};
 
 const UserConsumer = UserContext.Consumer;
 
-export { UserProvider, UserConsumer }
+export {UserProvider, UserConsumer};
 export default UserContext;
